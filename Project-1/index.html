@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="box1" />
+    <select id="select1">
+      <option value="GB">GB</option>
+      <option value="MB">MB</option>
+      <option value="KB">KB</option>
+      <option value="TB">TB</option>
+    </select>
+    to
+    <select id="select2">
+      <option value="GB">GB</option>
+      <option value="MB">MB</option>
+      <option value="KB">KB</option>
+      <option value="TB">TB</option>
+    </select>
+    <br />
+    <button id="btn">convert memory</button>
+    <br />
+    <input type="text" readonly id="box2" />
+
+    <script>
+      let box1 = document.querySelector("#box1");
+      let box2 = document.querySelector("#box2");
+      let select1 = document.querySelector("#select1");
+      let select2 = document.querySelector("#select2");
+      let btn = document.querySelector("#btn");
+
+      btn.addEventListener("click", () => {
+        let num = box1.value;
+        let from = select1.value;
+        let to = select2.value;
+        if (from == "GB" && to == "TB") {
+          box2.value = num / 1024;
+        } else if (from == "GB" && to == "MB") {
+          box2.value = num * 1024;
+        } else if (from == "GB" && to == "KB") {
+          box2.value = num * 1024 * 1024;
+        }
+      });
+    </script>
+  </body>
+</html>
