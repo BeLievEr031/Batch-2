@@ -25,7 +25,7 @@ await page.setViewport({ width: 1080, height: 1024 });
 await page.waitForSelector("#search")
 let searchBox = await page.locator("#search-input#search-input")
 searchBox.click();
-await page.keyboard.type("kaun disha mei leke", { delay: 100 })
+await page.keyboard.type(" kaun disha mei leke", { delay: 100 })
 await page.keyboard.press("Enter")
 
 await page.waitForSelector('a#video-title')

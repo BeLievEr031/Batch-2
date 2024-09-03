@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="box1" a-data="mydata">a-data wala box</div>
+    <div class="box1">ukgkugj</div>
+    <div class="box1">box4</div>
+    <div class="box1 box2">box1</div>
+
+    <div class="parent">
+      <div class="child">inner child</div>
+    </div>
+
+    <script>
+      let parent = document.querySelector(".parent");
+      let child = parent.querySelector(".child");
+      console.log(child);
+
+      let attBox = document.querySelector("div[a-data='mydata']");
+      console.log(attBox);
+    </script>
+  </body>
+</html>
