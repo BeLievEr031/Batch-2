@@ -1,34 +1,57 @@
-import puppeteer from "puppeteer";
-let browser = await puppeteer.launch(
+import puppeteer from 'puppeteer';
+
+// Launch the browser and open a new blank page
+const browser = await puppeteer.launch(
     {
-        executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
+        executablePath: "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
         headless: false
     }
 );
-let page = await browser.newPage();
 
-await page.goto("https://www.flipkart.com/");
+const page = await browser.newPage()
 
-await page.waitForSelector("._2SmNnR .Pke_EE")
-let searchBox = await page.$("._2SmNnR .Pke_EE")
-console.log(searchBox);
+await page.goto("https://www.flipkart.com")
+
+await page.waitForSelector('input[title="Search for Products, Brands and More"]')
+let searchBox = await page.$('input[title="Search for Products, Brands and More"]');
 
 await searchBox.click();
-await page.keyboard.type(" samsung mobile", { delay: 250 })
-await page.keyboard.press("Enter");
 
+await page.keyboard.type(" samsung mobile", { delay: 250 })
+await page.keyboard.press("Enter")
 
 await page.waitForSelector("._75nlfW")
 const mobileDivArr = await page.$$("._75nlfW")
 
+
 for (let i = 0; i < mobileDivArr.length; i++) {
-    await page.waitForSelector("._4WELSP img")
-    const img = await mobileDivArr[i].$("._4WELSP img");
-    let imgSrcHandle = await img.getProperty("src")
-    // Extract the src value from the handle
-    let imgSrc = await imgSrcHandle.jsonValue();
-    console.log(imgSrc);
+    const img = await mobileDivArr[i].$(".DByuf4");
+    const imgSrcHandler = await img.getProperty("src");
+    const imgSrc = await imgSrcHandler.jsonValue();
+
+    const mobileNameDiv = await mobileDivArr[i].$(".KzDlHZ");
+    const mobileName = await page.evaluate(el => el.innerText, mobileNameDiv)
+    // console.log(imgSrc);
+    const priceDiv = await mobileDivArr[i].$(".Nx9bqj._4b5DiR");
+    const mobilePrice = await page.evaluate(el => el.innerText, priceDiv)
+    // console.log(mobilePrice);
+
+    const ul = await mobileDivArr[i].$(".G4BRas")
+
+    const liList = await ul.$$("li")
+    const ram = await page.evaluate(el => el.innerText, liList[0])
+    const display = await page.evaluate(el => el.innerText, liList[1])
+    const camera = await page.evaluate(el => el.innerText, liList[2])
+    const battery = await page.evaluate(el => el.innerText, liList[3])
+    const processor = await page.evaluate(el => el.innerText, liList[4])
+    console.log(ram);
+    console.log(display);
+    console.log(camera);
+    console.log(battery);
+    console.log(processor);
+    console.log("-------------------------------------");
+
+
+
 
 }
-
-await page.setViewport({ width: 1000, height: 1024 });
