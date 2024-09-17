@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Youtube page</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .section {
+        display: flex;
+      }
+
+      .side-bar {
+        width: 20%;
+        background-color: red;
+        height: 100vh;
+      }
+
+      .content {
+        width: 80%;
+        background-color: yellow;
+        height: 500px;
+        height: 100vh;
+      }
+
+      input {
+        width: 50%;
+        height: 50px;
+        border-top-left-radius: 25px;
+        border-bottom-left-radius: 25px;
+      }
+
+      button {
+        width: 100px;
+        cursor: pointer;
+      }
+
+      .inp-cont {
+        display: flex;
+        justify-content: center;
+        padding-top: 10px;
+      }
+
+      .category-cont {
+        display: flex;
+        gap: 10px;
+        padding-top: 20px;
+        padding-left: 20px;
+        overflow-x: scroll;
+      }
+
+      .category {
+        border: 2px solid white;
+        padding: 10px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .video-cont-1 {
+        display: flex;
+        justify-content: space-evenly;
+        padding-top: 20px;
+        flex-wrap: wrap;
+      }
+
+      .video {
+        width: calc(100% / 3 - 50px);
+        height: 350px;
+        background-color: pink;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="section">
+      <div class="side-bar"></div>
+      <div class="content">
+        <div class="inp-cont">
+          <input type="text" />
+          <button>Search</button>
+        </div>
+
+        <div class="category-cont">
+          <div class="category">Technology</div>
+          <div class="category">Health</div>
+          <div class="category">Education</div>
+          <div class="category">Entertainment</div>
+          <div class="category">Science</div>
+          <div class="category">Sports</div>
+          <div class="category">Business</div>
+          <div class="category">Travel</div>
+          <div class="category">Fashion</div>
+          <div class="category">Sports</div>
+          <div class="category">Business</div>
+          <div class="category">Travel</div>
+          <div class="category">Fashion</div>
+          <div class="category">Sports</div>
+          <div class="category">Business</div>
+          <div class="category">Travel</div>
+          <div class="category">Fashion</div>
+          <div class="category">Sports</div>
+          <div class="category">Business</div>
+          <div class="category">Travel</div>
+          <div class="category">Fashion</div>
+          <div class="category">Food</div>
+          <div class="category">Business</div>
+          <div class="category">Travel</div>
+          <div class="category">Fashion</div>
+          <div class="category">Food</div>
+        </div>
+
+        <div class="video-cont-1">
+          <div class="video"></div>
+          <div class="video"></div>
+          <div class="video"></div>
+          <div class="video"></div>
+          <div class="video"></div>
+          <div class="video"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -23,7 +23,6 @@ await page.waitForSelector("._75nlfW")
 const mobileDivArr = await page.$$("._75nlfW")
 
 let arr = [];
-
 for (let i = 0; i < mobileDivArr.length; i++) {
     const img = await mobileDivArr[i].$(".DByuf4")
     const imgsrcHandler = await img.getProperty("src");
