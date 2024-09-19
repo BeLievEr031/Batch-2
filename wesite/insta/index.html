@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        display: flex;
+        height: 100vh;
+      }
+
+      .sidebar1 {
+        width: 15%;
+        height: 100%;
+        background-color: lightblue;
+      }
+      .main-content {
+        width: 55%;
+        height: 100%;
+        background-color: lightcoral;
+        overflow-x: hidden; /* prevents any horizontal scrolling on main-content */
+      }
+      .sidebar2 {
+        width: 30%;
+        height: 100%;
+        background-color: lightgreen;
+      }
+
+      .top-bar {
+        display: flex;
+        width: 100%;
+        overflow-x: scroll;
+        background-color: yellow;
+      }
+
+      .story {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: red;
+        flex-shrink: 0;
+        margin-right: 10px; /* adds gap between stories */
+      }
+
+      .story-cont {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar1"></div>
+      <div class="main-content">
+        <div class="top-bar">
+          <div class="story-cont">
+            <div class="story"></div>
+            <p>animesh jha</p>
+          </div>
+          <div class="story-cont">
+            <div class="story"></div>
+            <p>animesh jha</p>
+          </div>
+          <div class="story-cont">
+            <div class="story"></div>
+            <p>animesh jha</p>
+          </div>
+          <div class="story-cont">
+            <div class="story"></div>
+            <p>animesh jha</p>
+          </div>
+        </div>
+        <div class="post-cont"></div>
+      </div>
+      <div class="sidebar2"></div>
+    </div>
+  </body>
+</html>

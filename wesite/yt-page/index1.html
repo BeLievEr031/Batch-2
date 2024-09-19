@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>youtube</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .page {
+        /* background: red; */
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        background-color: #333;
+      }
+      .side-bar {
+        background: blue;
+        width: 20%;
+        height: 100%;
+      }
+      .main {
+        height: 100%;
+        width: 80%;
+        /* background-color: yellow; */
+      }
+      input {
+        width: 500px;
+        padding: 10px 12px;
+        border: none;
+        border-radius: 20px 0 0 20px;
+      }
+      .search-btn {
+        width: 100px;
+        padding: 10px 12px;
+        border: none;
+        border-radius: 0 20px 20px 0;
+      }
+      .btn-container button,
+      .mic-btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: none;
+      }
+      .mic-btn {
+        margin-left: 10px;
+      }
+      .category-cont {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 10px;
+        /* overflow: auto; */
+      }
+      .category-cont button {
+        padding: 8px 10px;
+        background-color: transparent;
+        border-radius: 5px;
+        color: white;
+        border: 1px solid black;
+        text-transform: capitalize;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="side-bar"></div>
+      <div class="main">
+        <header>
+          <div
+            style="
+              display: flex;
+              justify-content: space-evenly;
+              align-items: center;
+              /* background-color: green; */
+              width: 100%;
+              padding: 10px 0;
+            "
+          >
+            <div style="display: flex">
+              <input placeholder="Search" type="text" />
+              <button class="search-btn" type="button">Search</button>
+              <button class="mic-btn">mic</button>
+            </div>
+            <div class="btn-container" style="">
+              <button></button>
+              <button></button>
+              <button></button>
+            </div>
+          </div>
+          <div class="category-cont">
+            <button>all</button>
+            <button>live</button>
+            <button>music</button>
+            <button>food</button>
+            <button>javascript</button>
+            <button>news</button>
+            <button>mixer</button>
+            <button>codes</button>
+            <button>report</button>
+            <button>classes</button>
+            <button>types</button>
+            <button>reports</button>
+            <button>blogs</button>
+            <button>rides</button>
+            <button>technology</button>
+            <button>boxes</button>
+            <button>values</button>
+          </div>
+        </header>
+      </div>
+    </div>
+  </body>
+</html>

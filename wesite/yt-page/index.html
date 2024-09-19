@@ -9,6 +9,7 @@
       * {
         margin: 0;
         padding: 0;
+        font-family: sans-serif;
       }
 
       .section {
@@ -17,13 +18,27 @@
 
       .side-bar {
         width: 20%;
-        background-color: red;
+        background-color: #272727;
         height: 100vh;
+      }
+
+      .img-cont {
+        width: 100%;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .img-cont img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
       }
 
       .content {
         width: 80%;
-        background-color: yellow;
+        background-color: #0f0f0f;
         height: 500px;
         height: 100vh;
       }
@@ -74,12 +89,94 @@
         background-color: pink;
         margin-top: 10px;
       }
+
+      .nav-data {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      .nav-link {
+        display: flex;
+        font-size: 18px;
+        color: white;
+        height: 50px;
+        align-items: center;
+        padding-left: 10px;
+        border-radius: 10px;
+        /* justify-content: space-evenly; */
+        transition: all 0.2s;
+      }
+
+      .nav-link:hover {
+        background-color: #3d3d3d;
+      }
+
+      .nav-link p {
+        padding-top: 5px;
+        padding-left: 20px;
+        text-transform: capitalize;
+      }
+
+      .active {
+        background-color: #3d3d3d;
+      }
     </style>
   </head>
   <body>
     <div class="section">
-      <div class="side-bar"></div>
-      <div class="content">
+      <div class="side-bar">
+        <div class="img-cont">
+          <img src="./assets/images/yt-logo-2.png" alt="" />
+        </div>
+
+        <div class="nav-data">
+          <div class="nav-link active">
+            <i
+              data-feather="home"
+              color="white"
+              class="icon"
+              width="25px"
+              height="25px"
+            ></i>
+
+            <p>Home</p>
+          </div>
+          <div class="nav-link">
+            <i
+              data-feather="youtube"
+              color="white"
+              class="icon"
+              width="25px"
+              height="25px"
+            ></i>
+
+            <p>Shorts</p>
+          </div>
+          <div class="nav-link">
+            <i
+              data-feather="dollar-sign"
+              color="white"
+              class="icon"
+              width="25px"
+              height="25px"
+            ></i>
+
+            <p>Subscription</p>
+          </div>
+          <hr />
+          <div class="nav-link">
+            <p class="you">You</p>
+            <i
+              data-feather="arrow-right"
+              color="white"
+              class="icon"
+              width="25px"
+              height="25px"
+            ></i>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="content">
         <div class="inp-cont">
           <input type="text" />
           <button>Search</button>
@@ -122,7 +219,18 @@
           <div class="video"></div>
           <div class="video"></div>
         </div>
-      </div>
+      </div> -->
     </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.2/feather.min.js"
+      integrity="sha512-zMm7+ZQ8AZr1r3W8Z8lDATkH05QG5Gm2xc6MlsCdBz9l6oE8Y7IXByMgSm/rdRQrhuHt99HAYfMljBOEZ68q5A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script>
+      feather.replace();
+    </script>
   </body>
 </html>
