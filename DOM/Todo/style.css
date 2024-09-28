@@ -1,0 +1,90 @@
+/* 
+sideBar-Bg : #212121
+menu-bg:#323232
+task-bg:#323232
+right-section-bg:#1C1C1C
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+#side-bar {
+  width: 20%;
+  height: 100%;
+  background-color: #323232;
+}
+
+#main {
+  width: 80%;
+  height: 100%;
+  background-color: #212121;
+}
+
+.user-details {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+  color: white;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(173, 216, 230, 0.801);
+  font-weight: bold;
+}
+
+.info div {
+  font-size: 13px;
+}
+
+.user-name {
+  font-weight: bold;
+}
+
+.user-email {
+  color: rgb(214, 210, 210);
+}
+
+.input-container {
+  padding-left: 10px;
+  padding-top: 15px;
+  padding-right: 10px;
+}
+
+.search-input {
+  width: 100%;
+  font-size: 13px;
+  outline: none;
+  background-color: transparent;
+  border-radius: 5px;
+  border: none;
+  border-bottom: 2px solid white;
+  padding: 8px;
+  color: white;
+  box-shadow: rgba(6, 24, 44, 0.2) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.45) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.06) 0px 1px 0px inset;
+}
+
+.active-blue-border {
+  border-bottom: 2px solid aqua;
+}
