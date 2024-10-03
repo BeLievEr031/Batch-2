@@ -38,3 +38,30 @@ addTask.addEventListener("keydown", function (e) {
 
     }
 })
+
+// const colorDiv = document.querySelectorAll(".colors-container div")
+
+// for (let i = 0; i < colorDiv.length; i++) {
+//     let color = colorDiv[i].id
+//     console.log(color);
+
+//     colorDiv[i].style.backgroundColor = "#" + color;
+// }
+
+const neonColors = [
+    '#39FF14', '#FF6EC7', '#FF2B00', '#00FFFF', '#FF00FF',
+    '#FFEA00', '#4D4DFF', '#FFFF33', '#FF9F00', '#FF00CC',
+    '#00FF7F', '#FF4F00', '#FF1493', '#A700FF', '#00BFFF',
+    '#FFD700', '#DFFF00', '#FF007F', '#7FFF00', '#FF00FF',
+    '#00FFFF', '#FF8C00', '#BFFF00', '#FF69B4', '#FF4500',
+]
+
+const colorContainer = document.querySelector(".colors-container");
+
+for (let i = 0; i < neonColors.length; i++) {
+    const colorDiv = document.createElement("div");
+    colorDiv.classList.add("color")
+    colorDiv.style.backgroundColor = neonColors[i]
+    colorContainer.append(colorDiv)
+}
+
