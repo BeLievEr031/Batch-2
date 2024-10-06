@@ -109,6 +109,10 @@ right-section-bg:#1C1C1C
   background-color: rgb(104, 97, 97);
 }
 
+.active-menu {
+  background-color: rgb(104, 97, 97);
+}
+
 .menu-item p {
   font-size: 18px;
 }
@@ -135,7 +139,12 @@ hr {
   justify-content: space-between;
 }
 
-.header div {
+.header-data-cont {
+  color: white;
+}
+
+.header-label {
+  display: flex;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -156,6 +165,7 @@ hr {
   padding: 10px;
   border: 1px solid rgb(181, 177, 177);
   border-radius: 10px;
+  display: none;
 }
 
 .colors-container {
