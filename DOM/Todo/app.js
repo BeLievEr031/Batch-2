@@ -9,13 +9,17 @@ searchInput.addEventListener("blur", function () {
 })
 
 const menuItems = document.querySelectorAll(".menu-item");
-const headerLabel = document.querySelector(".header-label");
 let currActiveLink = menuItems[3]
+
+const headerLabel = document.querySelector(".header-label")
+const icon = headerLabel.querySelector("i")
+const heading = headerLabel.querySelector("h1")
 
 for (let i = 0; i < menuItems.length; i++) {
     menuItems[i].addEventListener("click", function () {
         currActiveLink.classList.remove("active-menu")
         menuItems[i].classList.add("active-menu")
+        heading.innerHTML = menuItems[i].querySelector("p").innerText
         currActiveLink = menuItems[i]
     })
 }
@@ -129,3 +133,9 @@ const todaysDate = new Date();
 day.innerText = weekArr[todaysDate.getDay()] + ", "
 date.innerText = todaysDate.getDate()
 month.innerText = monthArr[todaysDate.getMonth()]
+
+
+
+
+
+
