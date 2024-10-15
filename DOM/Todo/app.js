@@ -114,6 +114,21 @@ colorMenuOpener.addEventListener("click", function () {
 })
 
 
+document.addEventListener("keydown", function (e) {
+
+    if (e.ctrlKey && e.key === "q" || e.key === "Q") {
+        if (isColorPickerOpen === false) {
+            colorPickerBox.style.display = "block";
+        } else {
+            colorPickerBox.style.display = "none";
+        }
+
+        isColorPickerOpen = !isColorPickerOpen;
+
+    }
+})
+
+
 const day = document.querySelector("#day")
 const date = document.querySelector("#date")
 const month = document.querySelector("#month")
@@ -133,6 +148,8 @@ const todaysDate = new Date();
 day.innerText = weekArr[todaysDate.getDay()] + ", "
 date.innerText = todaysDate.getDate()
 month.innerText = monthArr[todaysDate.getMonth()]
+
+
 
 
 
