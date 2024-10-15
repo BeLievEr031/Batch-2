@@ -15,14 +15,47 @@ const headerLabel = document.querySelector(".header-label")
 const icon = headerLabel.querySelector("i")
 const heading = headerLabel.querySelector("h1")
 
+const day = document.querySelector("#day")
+const date = document.querySelector("#date")
+const month = document.querySelector("#month")
+
+const monthArr = [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+];
+
+const weekArr = [
+    "Sunday", "Monday", "Tuesday", "Wednesday",
+    "Thursday", "Friday", "Saturday"
+];
+
+const todaysDate = new Date();
+
+function handleDate() {
+    day.innerText = weekArr[todaysDate.getDay()] + ", "
+    date.innerText = todaysDate.getDate()
+    month.innerText = monthArr[todaysDate.getMonth()]
+}
+
+handleDate();
+
+function handleDateReset() {
+    day.innerText = "";
+    date.innerText = "";
+    month.innerText = "";
+}
+
 for (let i = 0; i < menuItems.length; i++) {
     menuItems[i].addEventListener("click", function () {
         currActiveLink.classList.remove("active-menu")
         menuItems[i].classList.add("active-menu")
         heading.innerHTML = menuItems[i].querySelector("p").innerText
         currActiveLink = menuItems[i]
+        heading.innerHTML === "Tasks" ? handleDate() : handleDateReset();
     })
 }
+
+
 
 const addTask = document.querySelector("#add-task")
 const tasksContainer = document.querySelector(".tasks")
@@ -128,26 +161,25 @@ document.addEventListener("keydown", function (e) {
     }
 })
 
+const onClickOutside = (element) => {
+    document.addEventListener('click', e => {
 
-const day = document.querySelector("#day")
-const date = document.querySelector("#date")
-const month = document.querySelector("#month")
+        // console.log(element.contains(e.target));
 
-const monthArr = [
-    "January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December"
-];
+        if (!element.contains(e.target) && isColorPickerOpen === true) {
+            if (isColorPickerOpen === false) {
+                colorPickerBox.style.display = "block";
+            } else {
+                colorPickerBox.style.display = "none";
+            }
+            isColorPickerOpen = !isColorPickerOpen;
+        };
+    });
+};
 
-const weekArr = [
-    "Sunday", "Monday", "Tuesday", "Wednesday",
-    "Thursday", "Friday", "Saturday"
-];
+onClickOutside(colorMenuOpener); // feature for me
+// onClickOutside(colorPickerBox);// will remove the bug
 
-const todaysDate = new Date();
-
-day.innerText = weekArr[todaysDate.getDay()] + ", "
-date.innerText = todaysDate.getDate()
-month.innerText = monthArr[todaysDate.getMonth()]
 
 
 
