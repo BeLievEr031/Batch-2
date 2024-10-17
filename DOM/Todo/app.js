@@ -52,6 +52,7 @@ for (let i = 0; i < menuItems.length; i++) {
         heading.innerHTML = menuItems[i].querySelector("p").innerText
         currActiveLink = menuItems[i]
         heading.innerHTML === "Tasks" ? handleDate() : handleDateReset();
+        renderCompletedTask();
     })
 }
 
@@ -59,12 +60,11 @@ for (let i = 0; i < menuItems.length; i++) {
 
 const addTask = document.querySelector("#add-task")
 const tasksContainer = document.querySelector(".tasks")
+const tasksArr = [];
+let idCount = 1;
+
 addTask.addEventListener("keydown", function (e) {
     if (e.key === "Enter") {
-        // <div class="task-container">
-        //     <div class="circle"></div>
-        //     <div class="taks">My first task</div>
-        // </div>
 
         const taskContainerDiv = document.createElement("div")
         taskContainerDiv.classList.add("task-container")
@@ -83,21 +83,80 @@ addTask.addEventListener("keydown", function (e) {
 
         addTask.value = "";
 
+        let obj = {
+            id: idCount,
+            task: taskDiv.innerText,
+            completed: false,
+
+        }
+
+        tasksArr.push(obj);
+        idCount++;
+
         circleDiv.addEventListener("click", function () {
-            console.log("task completed");
+            reConstructUiTasks(obj.id);
         })
 
     }
 })
 
-// const colorDiv = document.querySelectorAll(".colors-container div")
+function reConstructUiTasks(id) {
+    tasksContainer.innerHTML = "";
 
-// for (let i = 0; i < colorDiv.length; i++) {
-//     let color = colorDiv[i].id
-//     console.log(color);
+    tasksArr[id - 1].completed = true;
+    for (let i = 0; i < tasksArr.length; i++) {
 
-//     colorDiv[i].style.backgroundColor = "#" + color;
-// }
+        if (tasksArr[i].completed === false) {
+            const taskContainerDiv = document.createElement("div")
+            taskContainerDiv.classList.add("task-container")
+
+            const circleDiv = document.createElement("div")
+            circleDiv.classList.add("circle")
+
+            const taskDiv = document.createElement("div")
+            taskDiv.classList.add("task")
+            taskDiv.innerText = tasksArr[i].task
+
+            taskContainerDiv.appendChild(circleDiv)
+            taskContainerDiv.appendChild(taskDiv)
+
+            tasksContainer.appendChild(taskContainerDiv)
+
+            circleDiv.addEventListener("click", function () {
+                reConstructUiTasks(i + 1);
+
+            })
+        }
+    }
+}
+
+
+function renderCompletedTask() {
+    tasksContainer.innerHTML = "";
+
+
+    for (let i = 0; i < tasksArr.length; i++) {
+
+        if (tasksArr[i].completed === true) {
+            const taskContainerDiv = document.createElement("div")
+            taskContainerDiv.classList.add("task-container")
+
+            const circleDiv = document.createElement("div")
+            circleDiv.classList.add("circle")
+            circleDiv.style.backgroundColor = "rgba(255, 255, 255)"
+
+            const taskDiv = document.createElement("div")
+            taskDiv.classList.add("task")
+            taskDiv.innerText = tasksArr[i].task
+
+            taskContainerDiv.appendChild(circleDiv)
+            taskContainerDiv.appendChild(taskDiv)
+
+            tasksContainer.appendChild(taskContainerDiv)
+
+        }
+    }
+}
 
 const neonColors = [
     '#39FF14', '#FF6EC7', '#FF2B00', '#00FFFF', '#FF00FF',
