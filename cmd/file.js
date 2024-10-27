@@ -1,34 +1,15 @@
 const fs = require('fs');
+let command = process.argv[2]
+let file = process.argv[3]
+let data = process.argv[4]
 
-const filePath = __dirname + "/magic.txt"
-// fs.readFile(filePath, 'utf8', function (err, data) {
-//     if (err) {
-//         console.log(err);
-//         return;
-//     }
 
-//     // console.log(String(data)); without UTF-8
-//     console.log(data);
-//     console.log("file read.");
-
-// });
-
-// fs.appendFile(filePath, "\ni am a magic.", function (err) {
-//     if (err) {
-//         console.log(err);
-//         return;
-//     }
-
-//     console.log("file updated.");
-
-// })
-
-fs.unlink(filePath, function (err) {
-    if (err) {
-        console.log(err);
-        return;
-    }
-
-    console.log("file deleted.");
-
-})
+if (command === "createFile") {
+    fs.writeFile(file, "", (err) => {
+        if (err) {
+            console.log(err);
+            return
+        }
+        console.log(file, " file crated successfully")
+    });
+}
