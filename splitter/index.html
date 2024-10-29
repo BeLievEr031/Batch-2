@@ -58,24 +58,23 @@
       const splitter = document.querySelector(".splitter");
       const child1 = document.querySelector("#child1");
       const child2 = document.querySelector("#child2");
-      let isLeft = false;
-      document.addEventListener("mousemove", (e) => {
-        if (isLeft) {
-          console.log(e.x);
-          child1.style.width = e.x + "px";
-          child2.style.width = window.innerWidth - e.x + "px";
-        }
-      });
+
+      function handleMouseMove(e) {
+        child1.style.width = e.clientX + "px";
+        child2.style.width = window.innerWidth - e.clientX + "px";
+      }
 
       splitter.addEventListener("mousedown", (e) => {
-        if (event.button === 0) {
-          isLeft = true;
+        if (e.button === 0) {
+          document.addEventListener("mousemove", handleMouseMove);
         }
       });
 
       splitter.addEventListener("mouseup", (e) => {
-        isLeft = false;
+        document.removeEventListener("mousemove", handleMouseMove);
       });
+
+      //   debouncing and throtling
     </script>
   </body>
 </html>
