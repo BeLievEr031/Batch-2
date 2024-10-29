@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+      }
+
+      .child {
+        background-color: lightblue;
+        height: 100%;
+        width: 50%;
+      }
+
+      .splitter {
+        width: 10px;
+        background-color: red;
+        cursor: move;
+      }
+
+      .content {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="child" id="child1">
+        <div class="content">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+          Reprehenderit suscipit ut commodi esse adipisci quas omnis molestiae
+          vel, obcaecati consequatur nostrum quasi eos! Architecto sapiente
+          illum, cupiditate nemo error accusantium?
+        </div>
+      </div>
+      <div class="splitter"></div>
+      <div class="child" id="child2">
+        <div class="content">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+          Reprehenderit suscipit ut commodi esse adipisci quas omnis molestiae
+          vel, obcaecati consequatur nostrum quasi eos! Architecto sapiente
+          illum, cupiditate nemo error accusantium?
+        </div>
+      </div>
+    </div>
+    <script>
+      const container = document.querySelector(".container");
+      const splitter = document.querySelector(".splitter");
+      const child1 = document.querySelector("#child1");
+      const child2 = document.querySelector("#child2");
+      let isLeft = false;
+      document.addEventListener("mousemove", (e) => {
+        if (isLeft) {
+          console.log(e.x);
+          child1.style.width = e.x + "px";
+          child2.style.width = window.innerWidth - e.x + "px";
+        }
+      });
+
+      splitter.addEventListener("mousedown", (e) => {
+        if (event.button === 0) {
+          isLeft = true;
+        }
+      });
+
+      splitter.addEventListener("mouseup", (e) => {
+        isLeft = false;
+      });
+    </script>
+  </body>
+</html>
