@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  gap: 10px;
+}
+
+.btn {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.main {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding-left: 10px;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: lightblue;
+  border-radius: 10px;
+}
