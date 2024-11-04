@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+}
+
+.box1 {
+  width: 200px;
+  height: 350px;
+  background-color: lightblue;
+}
+
+.box3 {
+  width: 200px;
+  height: 350px;
+  background-color: lightblue;
+}
