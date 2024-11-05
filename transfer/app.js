@@ -47,6 +47,18 @@ function constructTransfer(checkBoxes, dataArr, btn) {
     }
 }
 
+
+
 constructTransfer(leftCheckboxs, leftDataArr, rightBtn)
 
 constructTransfer(rightCheckboxs, righDataArr, leftBtn)
+
+const righBox = document.querySelector(".box3")
+rightBtn.addEventListener('click', () => {
+    // leftarr
+    for (let i = 0; i < leftDataArr.length; i++) {
+        leftDataArr[i].parent.remove();
+        console.log(leftDataArr[i].parent);
+
+    }
+})
