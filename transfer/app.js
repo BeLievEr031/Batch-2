@@ -1,44 +1,52 @@
 const leftCheckboxs = document.querySelectorAll(".box1 input");
 const rightCheckboxs = document.querySelectorAll(".box3 input");
 const rightBtn = document.querySelector("#rightBtn")
+const leftBtn = document.querySelector("#leftBtn");
 // console.log(rightCheckboxs)
 const leftDataArr = [];
+const righDataArr = [];
 
-for (let i = 0; i < leftCheckboxs.length; i++) {
-    leftCheckboxs[i].addEventListener("change", function () {
+function constructTransfer(checkBoxes, dataArr, btn) {
+    for (let i = 0; i < checkBoxes.length; i++) {
+        checkBoxes[i].addEventListener("change", function () {
 
-        if (leftCheckboxs[i].checked) {
-            const obj = {
-                position: i,
-                parent: leftCheckboxs[i].parentElement
-            }
-            leftDataArr.push(obj);
+            if (checkBoxes[i].checked) {
+                const obj = {
+                    position: i,
+                    parent: checkBoxes[i].parentElement
+                }
+                dataArr.push(obj);
 
-        } else {
-            const unchekposition = i;
-            // [for debug] const temp = [...leftDataArr];
+            } else {
+                const unchekposition = i;
+                // [for debug] const temp = [...leftDataArr];
 
-            for (let j = 0; j < leftDataArr.length; j++) {
-                let arrPos = leftDataArr[j].position
-                if (arrPos === unchekposition) {
-                    // [for debug] console.log("mujhe array se nikal do ", unchekposition);
-                    // [for debug] console.log("before deleting");
-                    // [for debug] console.log(temp);
-                    leftDataArr.splice(j, 1)
-                    // [for debug] console.log("After deleting");
-                    // [for debug] 
-                    console.log(leftDataArr);
+                for (let j = 0; j < dataArr.length; j++) {
+                    let arrPos = dataArr[j].position
+                    if (arrPos === unchekposition) {
+                        // [for debug] console.log("mujhe array se nikal do ", unchekposition);
+                        // [for debug] console.log("before deleting");
+                        // [for debug] console.log(temp);
+                        dataArr.splice(j, 1)
+                        // [for debug] console.log("After deleting");
+                        // [for debug] 
+                        console.log(dataArr);
+
+                    }
 
                 }
 
             }
 
-        }
-
-        if (leftDataArr.length > 0) {
-            rightBtn.style.backgroundColor = "red";
-        } else {
-            rightBtn.style.backgroundColor = "gray";
-        }
-    })
+            if (dataArr.length > 0) {
+                btn.style.backgroundColor = "red";
+            } else {
+                btn.style.backgroundColor = "gray";
+            }
+        })
+    }
 }
+
+constructTransfer(leftCheckboxs, leftDataArr, rightBtn)
+
+constructTransfer(rightCheckboxs, righDataArr, leftBtn)
