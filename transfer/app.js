@@ -47,18 +47,30 @@ function constructTransfer(checkBoxes, dataArr, btn) {
     }
 }
 
-
-
 constructTransfer(leftCheckboxs, leftDataArr, rightBtn)
-
 constructTransfer(rightCheckboxs, righDataArr, leftBtn)
+const rightBox = document.querySelector(".box3")
+console.log(rightBox);
 
-const righBox = document.querySelector(".box3")
 rightBtn.addEventListener('click', () => {
-    // leftarr
     for (let i = 0; i < leftDataArr.length; i++) {
+
+
+        // rightBox.append(leftDataArr[i].parent);
+
+        const div = leftDataArr[i].parent.cloneNode(true);
+        rightBox.append(div);
+        const allInput = div.querySelector("input")
+        allInput.checked = false;
+
         leftDataArr[i].parent.remove();
-        console.log(leftDataArr[i].parent);
 
     }
 })
+
+leftBtn.addEventListener('click', () => {
+    for (let i = 0; i < righDataArr.length; i++) {
+        righDataArr[i].parent.remove();
+    }
+})
+
