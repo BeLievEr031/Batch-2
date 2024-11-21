@@ -3,7 +3,7 @@ const rightCheckboxs = document.querySelectorAll(".box3 input");
 const rightBtn = document.querySelector("#rightBtn")
 const leftBtn = document.querySelector("#leftBtn");
 // console.log(rightCheckboxs)
-const leftDataArr = [];
+let leftDataArr = [];
 const righDataArr = [];
 
 function constructTransfer(checkBoxes, dataArr, btn) {
@@ -66,6 +66,7 @@ rightBtn.addEventListener('click', () => {
         leftDataArr[i].parent.remove();
 
     }
+    leftDataArr = [];
 })
 
 leftBtn.addEventListener('click', () => {
