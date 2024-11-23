@@ -38,3 +38,33 @@ video {
   top: 0;
   left: 0;
 }
+
+.carousal-cont {
+  display: flex; /* Ensures the child elements are laid out in a row */
+  overflow-x: auto; /* Enables horizontal scrolling */
+  overflow-y: hidden; /* Prevents vertical scrolling */
+  white-space: nowrap; /* Prevents the content from wrapping to the next line */
+  scrollbar-width: thin; /* Customizes the scrollbar width (for modern browsers) */
+  width: 550px;
+  padding: 10px;
+  scrollbar-width: none;
+}
+
+.box {
+  width: 100px; /* Sets a fixed width for the boxes */
+  height: 70px; /* Sets a fixed height for the boxes */
+  background-color: lightblue; /* Gives the boxes a background color for visibility */
+  border: 1px solid #000; /* Adds a border for better visibility */
+  flex-shrink: 0; /* Prevents the boxes from shrinking */
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+  transform-origin: center;
+  transform: scale(0.8);
+  transition: all 0.2s;
+}
+
+.box:hover {
+  background-color: lightcoral;
+  transform: scale(1);
+}
