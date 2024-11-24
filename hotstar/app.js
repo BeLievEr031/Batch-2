@@ -30,3 +30,25 @@ leftBtn.addEventListener("click", () => {
     const scrollWidth = carousalCont.scrollWidth + 100;
     carousalCont.scrollBy({ left: -Math.ceil(scrollWidth / 2), behavior: "smooth" });
 })
+
+
+
+let delay = 1000;
+let timeout = null;
+const box1 = document.querySelector(".box1")
+const p = document.querySelector('.box1 p')
+
+box1.addEventListener("mouseenter", function () {
+    timeout = setTimeout(() => {
+        box1.style.transform = "scale(1.5)"
+        p.style.display = "block"
+    }, delay);
+
+})
+box1.addEventListener("mouseleave", function () {
+    console.log("mouse leave");
+    box1.style.transform = "scale(1)"
+    p.style.display = "none"
+    clearTimeout(timeout);
+
+})
