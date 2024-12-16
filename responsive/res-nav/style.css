@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(37, 37, 37);
+}
+
+nav {
+  display: flex;
+  padding: 10px;
+  background-color: lightblue;
+  gap: 10px;
+}
+
+nav div {
+  font-size: 20px;
+  color: lightcoral;
+  font-weight: bold;
+}
+
+.parent {
+  height: 100px;
+  background-color: red;
+  padding: 10px;
+}
+
+.child {
+  height: 50px;
+  background-color: lightgray;
+  /* min-width: 400px; */
+  max-width: 400px;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightcoral;
+  }
+  nav {
+    flex-direction: column;
+  }
+}
