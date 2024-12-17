@@ -6,39 +6,68 @@
 
 body {
   background-color: rgb(37, 37, 37);
+  overflow-x: hidden;
 }
 
 nav {
   display: flex;
+  background-color: white;
+  color: black;
+  justify-content: space-between;
   padding: 10px;
-  background-color: lightblue;
-  gap: 10px;
+  align-items: center;
+  position: relative;
 }
 
-nav div {
+.items {
+  display: flex;
+  gap: 50px;
+  padding-right: 10px;
+}
+
+.items div {
   font-size: 20px;
-  color: lightcoral;
-  font-weight: bold;
+  cursor: pointer;
 }
 
-.parent {
-  height: 100px;
+.menu {
+  display: none;
+}
+
+.mobile-items {
+  position: absolute;
+  transform: translate(100%, 0);
+  left: 0;
+  top: 50px;
+  width: 100%;
   background-color: red;
-  padding: 10px;
+  transition: all 0.5s;
+  height: 100vh;
+  display: none;
 }
 
-.child {
-  height: 50px;
-  background-color: lightgray;
-  /* min-width: 400px; */
-  max-width: 400px;
+.sliding {
+  transform: translate(0, 0);
+  /* height: 100vh; */
 }
 
 @media only screen and (max-width: 600px) {
-  body {
-    background-color: lightcoral;
+  .menu {
+    display: block;
   }
-  nav {
-    flex-direction: column;
+  .items {
+    display: none;
+    cursor: pointer;
+  }
+  .menu-icon {
+    cursor: pointer;
+  }
+
+  .close-icon {
+    display: none;
+    cursor: pointer;
+  }
+  .mobile-items {
+    display: block;
   }
 }
