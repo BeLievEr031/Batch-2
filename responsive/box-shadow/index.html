@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSSmatic Logo</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="logo">
+      <div class="logo-left">
+        <span class="css-text">CSS</span>
+      </div>
+      <div class="logo-right">
+        <span class="matic-text">matic</span>
+      </div>
+    </div>
+
+    <div class="tab-cont">
+      <div class="tab-menus">
+        <div class="menu">Gradient Generator</div>
+        <div class="menu">Border Radius</div>
+        <div class="menu">Noise Texture</div>
+        <div class="menu active">Box Shadow</div>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="action-box">
+        <div>
+          <p>Horizontal Length</p>
+          <input type="range" id="h-range" />
+        </div>
+        <div>
+          <p>Vertical Length</p>
+          <input type="range" id="v-range" />
+        </div>
+      </div>
+
+      <div class="output-box">
+        <div class="box"></div>
+      </div>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
