@@ -9,5 +9,7 @@ vRange.addEventListener("input", function () {
 })
 
 hRange.addEventListener("input", function () {
+    console.log(hRange.value);
+
     box.style.boxShadow = `${hRange.value}px ${vRange.value}px black`
 })

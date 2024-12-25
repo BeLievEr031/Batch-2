@@ -72,3 +72,9 @@
   background-color: lightblue;
   box-shadow: 5px 5px black;
 }
+
+#h-range {
+  appearance: none;
+  border-radius: 3px;
+  background-color: gray;
+}
