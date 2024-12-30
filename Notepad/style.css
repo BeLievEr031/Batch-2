@@ -8,15 +8,18 @@ body {
   height: 100%;
   width: 100%;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  overflow: hidden;
 }
 
 header {
-  padding: 10px;
   background-color: rgb(216, 216, 216);
-  font-size: 22px;
-  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: black;
   font-weight: 600;
+  height: 40px;
 }
 
 nav {
@@ -148,4 +151,11 @@ hr {
   transform: translate(-50%, -50%) rotate(45deg);
   background-color: black;
   position: absolute;
+}
+
+#writing-area {
+  outline: none;
+  height: 82vh;
+  overflow-y: scroll;
+  padding: 5px;
 }
