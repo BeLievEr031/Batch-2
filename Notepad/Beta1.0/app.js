@@ -18,3 +18,31 @@ fileInput.addEventListener("change", function (e) {
 
     editor.appendChild(pre)
 })
+
+
+const printBtn = document.querySelector("#print")
+
+printBtn.addEventListener('click', function () {
+    const printWindow = window.open("", "", "width=800,height=600");
+    printWindow.document.write(`
+            <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+    </head>
+    <body>
+      ${editor.innerHTML}
+    </body>
+    </html>
+            `);
+
+    printWindow.document.close();
+    printWindow.print();
+    printWindow.onafterprint(() => printWindow.close())
+    printWindow.close();
+
+    // window.print();
+
+})

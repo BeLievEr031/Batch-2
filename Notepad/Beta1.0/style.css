@@ -58,7 +58,6 @@ nav {
 .drop-item {
   padding: 5px 10px;
   position: relative;
-  overflow-x: hidden;
 }
 
 .drop-item:hover {
