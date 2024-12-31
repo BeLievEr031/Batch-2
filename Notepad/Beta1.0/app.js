@@ -40,9 +40,15 @@ printBtn.addEventListener('click', function () {
 
     printWindow.document.close();
     printWindow.print();
-    printWindow.onafterprint(() => printWindow.close())
-    printWindow.close();
+    printWindow.onafterprint = function () {
+        printWindow.close();
+    };
 
-    // window.print();
+    // Fallback mechanism in case `onafterprint` doesn't work
+    setTimeout(() => {
+        if (!printWindow.closed) {
+            printWindow.close();
+        }
+    }, 1);
 
 })
