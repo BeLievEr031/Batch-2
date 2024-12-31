@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header {
+  background-color: rgb(168, 157, 157);
+  display: flex;
+  padding: 10px 0px;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+nav {
+  display: flex;
+  gap: 10px;
+  padding: 5px 10px;
+  border-bottom: 1px solid gray;
+}
+
+.nav-item {
+  cursor: pointer;
+  padding: 5px 10px;
+  border: 1px solid transparent;
+  position: relative;
+}
+
+.nav-item:hover {
+  border: 1px solid black;
+}
+
+.nav-item:hover .dropdown {
+  display: block;
+}
+
+.dropdown {
+  position: absolute;
+  width: 190px;
+  padding: 5px 0px;
+  left: 0;
+  border: 1px solid black;
+  bottom: 0;
+  transform: translateY(100%);
+  display: none;
+  background-color: white;
+}
+
+.drop-item {
+  padding: 5px 10px;
+  position: relative;
+}
+
+.drop-item:hover {
+  background-color: lightblue;
+}
+
+.drop-item:hover .date-formates {
+  display: block;
+}
+
+.date-formates {
+  padding-top: 5px;
+  position: absolute;
+  background-color: white;
+  right: 0;
+  top: -5px;
+  transform: translateX(100%);
+  border: 1px solid black;
+  width: 170px;
+  display: none;
+}
+
+.date-formates div {
+  padding: 5px 10px;
+}
+
+.date-formates div:hover {
+  background-color: lightblue;
+}
