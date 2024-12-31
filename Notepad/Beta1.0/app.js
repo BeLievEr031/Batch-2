@@ -25,7 +25,7 @@ const printBtn = document.querySelector("#print")
 printBtn.addEventListener('click', function () {
     const printWindow = window.open("", "", "width=800,height=600");
     printWindow.document.write(`
-            <!DOCTYPE html>
+    <!DOCTYPE html>
     <html lang="en">
     <head>
       <meta charset="UTF-8">
@@ -35,8 +35,7 @@ printBtn.addEventListener('click', function () {
     <body>
       ${editor.innerHTML}
     </body>
-    </html>
-            `);
+    </html>`);
 
     printWindow.document.close();
     printWindow.print();
@@ -44,11 +43,7 @@ printBtn.addEventListener('click', function () {
         printWindow.close();
     };
 
-    // Fallback mechanism in case `onafterprint` doesn't work
-    setTimeout(() => {
-        if (!printWindow.closed) {
-            printWindow.close();
-        }
-    }, 1);
-
+    if (!printWindow.closed) {
+        printWindow.close();
+    }
 })
