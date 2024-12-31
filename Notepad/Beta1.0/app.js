@@ -19,7 +19,6 @@ fileInput.addEventListener("change", function (e) {
     editor.appendChild(pre)
 })
 
-
 const printBtn = document.querySelector("#print")
 
 printBtn.addEventListener('click', function () {
@@ -46,4 +45,21 @@ printBtn.addEventListener('click', function () {
     if (!printWindow.closed) {
         printWindow.close();
     }
+})
+
+const saveBtn = document.querySelector("#save");
+console.log(saveBtn);
+
+
+saveBtn.addEventListener('click', () => {
+    const content = editor.textContent;
+    const blob = new Blob([content], { type: 'text/plain' });
+    const link = document.createElement('a');
+    link.download = 's.txt';
+    link.href = URL.createObjectURL(blob);
+    console.log(link.href);
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
 })
