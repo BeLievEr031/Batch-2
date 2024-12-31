@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 html,
 body {
   height: 100%;
@@ -57,6 +58,7 @@ nav {
 .drop-item {
   padding: 5px 10px;
   position: relative;
+  overflow-x: hidden;
 }
 
 .drop-item:hover {
@@ -65,6 +67,13 @@ nav {
 
 .drop-item:hover .date-formates {
   display: block;
+}
+
+#file-input {
+  position: absolute;
+  left: 0;
+  z-index: -1;
+  transform: translateX(-200%);
 }
 
 .date-formates {
@@ -85,4 +94,10 @@ nav {
 
 .date-formates div:hover {
   background-color: lightblue;
+}
+
+#editor {
+  height: 80vh;
+  outline: none;
+  overflow-y: scroll;
 }

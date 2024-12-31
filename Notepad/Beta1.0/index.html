@@ -12,20 +12,28 @@
       <div class="nav-item">
         File &#11167;
         <div class="dropdown">
-          <div class="drop-item">&#128221; New Document</div>
+          <div class="drop-item">
+            <!-- <label for="file-opener">&#128221; New Document</label>
+            <input type="file" id="file-opener" accept=".txt" /> -->
+
+            &#128221; New Document
+          </div>
           <div class="drop-item">&#128190; Save</div>
-          <div class="drop-item">&#128193; Open</div>
-          <div class="drop-item">&#128424; Print</div>
+          <div class="drop-item">
+            <label for="file-input">&#128193; Open</label>
+            <input type="file" id="file-input" accept=".txt" />
+          </div>
+          <div class="drop-item" id="print">&#128424; Print</div>
         </div>
       </div>
       <div class="nav-item">
         Edit &#11167;
-        <div class="dropdown">
+        <!-- <div class="dropdown">
           <div class="drop-item">&#128221; New Document</div>
           <div class="drop-item">&#128190; Save</div>
           <div class="drop-item">&#128193; Open</div>
           <div class="drop-item">&#128424; Print</div>
-        </div>
+        </div> -->
       </div>
       <div class="nav-item">
         Insert &#11167;
@@ -46,6 +54,8 @@
       <div class="nav-item">View &#11167;</div>
       <div class="nav-item">Help &#11167;</div>
     </nav>
+
+    <div id="editor" contenteditable></div>
     <script src="app.js"></script>
   </body>
 </html>
