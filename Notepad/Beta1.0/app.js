@@ -48,8 +48,6 @@ printBtn.addEventListener('click', function () {
 })
 
 const saveBtn = document.querySelector("#save");
-console.log(saveBtn);
-
 
 saveBtn.addEventListener('click', () => {
     const content = editor.textContent;
@@ -62,4 +60,42 @@ saveBtn.addEventListener('click', () => {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+})
+
+const copyBtn = document.querySelector("#copy")
+
+copyBtn.addEventListener("mousedown", (e) => {
+    e.preventDefault();
+    const selection = window.getSelection();
+    const selectedData = selection.toString();
+    navigator.clipboard.writeText(selectedData);
+
+    selection.removeAllRanges();
+})
+
+const cutBtn = document.querySelector("#cut")
+
+cutBtn.addEventListener("mousedown", (e) => {
+    e.preventDefault();
+    const selection = window.getSelection();
+    const selectedData = selection.toString();
+    navigator.clipboard.writeText(selectedData)
+
+    if (!selection.isCollapsed) {
+        const range = selection.getRangeAt(0);
+        range.deleteContents();
+    }
+
+})
+
+const pasteBtn = document.querySelector("#paste");
+pasteBtn.addEventListener("mousedown", async () => {
+    // const data = await navigator.clipboard.readText()
+    // console.log(data.innerText  );
+
+    navigator.clipboard
+        .readText()
+        .then((clipText) => (console.log(clipText)
+        ));
+
 })

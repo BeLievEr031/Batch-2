@@ -58,6 +58,7 @@ nav {
 .drop-item {
   padding: 5px 10px;
   position: relative;
+  text-transform: capitalize;
 }
 
 .drop-item:hover {

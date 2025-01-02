@@ -23,12 +23,14 @@
       </div>
       <div class="nav-item">
         Edit &#11167;
-        <!-- <div class="dropdown">
-          <div class="drop-item">&#128221; New Document</div>
-          <div class="drop-item">&#128190; Save</div>
-          <div class="drop-item">&#128193; Open</div>
-          <div class="drop-item">&#128424; Print</div>
-        </div> -->
+        <div class="dropdown">
+          <div class="drop-item">Undo</div>
+          <div class="drop-item">Redo</div>
+          <hr />
+          <div class="drop-item" id="cut">cut</div>
+          <div class="drop-item" id="copy">copy</div>
+          <div class="drop-item" id="paste">paste</div>
+        </div>
       </div>
       <div class="nav-item">
         Insert &#11167;
@@ -50,7 +52,7 @@
       <div class="nav-item">Help &#11167;</div>
     </nav>
 
-    <div id="editor" contenteditable></div>
+    <div id="editor" contenteditable>i am a boy</div>
     <script src="app.js"></script>
   </body>
 </html>
