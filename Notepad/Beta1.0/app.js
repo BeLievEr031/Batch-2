@@ -89,13 +89,16 @@ cutBtn.addEventListener("mousedown", (e) => {
 })
 
 const pasteBtn = document.querySelector("#paste");
-pasteBtn.addEventListener("mousedown", async () => {
-    // const data = await navigator.clipboard.readText()
-    // console.log(data.innerText  );
+pasteBtn.addEventListener("mousedown", async (e) => {
+    e.preventDefault();
+    try {
+        const text = await navigator.clipboard.readText();
+        editor.innerHTML += text; // Append the text to the textarea
 
-    navigator.clipboard
-        .readText()
-        .then((clipText) => (console.log(clipText)
-        ));
+        console.log(text);
+
+    } catch (err) {
+        console.error('Failed to read clipboard content:', err);
+    }
 
 })
