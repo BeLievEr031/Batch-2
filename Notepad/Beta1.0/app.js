@@ -102,3 +102,58 @@ pasteBtn.addEventListener("mousedown", async (e) => {
     }
 
 })
+
+
+function setDateFormates() {
+    const date = new Date();
+    let formate4 = date.toLocaleDateString();
+    const splittedF4 = formate4.split("/")
+
+    // Month
+    if (Number(splittedF4[0]) < 9) {
+        splittedF4[0] = "0" + splittedF4[0]
+    }
+
+    // Date
+    if (Number(splittedF4[1]) < 9) {
+        splittedF4[1] = "0" + splittedF4[1]
+    }
+
+
+    formate4 = splittedF4.join("/");
+    let formate2 = splittedF4.reverse().join("-");
+
+
+    const formate3 = date.toLocaleTimeString();
+    const formateElem1 = document.querySelector(".formate1")
+    const formateElem2 = document.querySelector(".formate2")
+    const formateElem3 = document.querySelector(".formate3")
+    const formateElem4 = document.querySelector(".formate4")
+
+    formateElem2.innerText = formate2;
+    formateElem3.innerText = formate3;
+    formateElem4.innerText = formate4;
+
+    const splittedF3 = formate3.split(" ");
+    const amOrpm = splittedF3[1];
+
+    if (amOrpm === "PM") {
+        const time = splittedF3[0];
+        const timeArr = time.split(":")
+        timeArr[0] = Number(timeArr[0]) + 12;
+        formateElem1.innerText = timeArr.join(":")
+    }
+
+
+    formateElem1.addEventListener("click", () => {
+        editor.innerHTML = editor.innerHTML + formateElem1.innerText;
+    })
+
+    formateElem2.addEventListener("click", () => {
+        editor.innerHTML = editor.innerHTML + formateElem2.innerText;
+    })
+
+
+}
+
+setDateFormates();
