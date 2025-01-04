@@ -1,11 +1,12 @@
 debugger
-var x = 31;
+var x = 32
 console.log(x);
+let y = 92
 
-function run() {
-    var name = "sandeep rajak"
-    console.log("i am a run function.");
+function mathura() {
+    var iamathura = 45;
+    console.log("i am running.");
+    console.log(this);
 }
 
-
-run();
+mathura();
