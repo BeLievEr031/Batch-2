@@ -157,3 +157,101 @@ function setDateFormates() {
 }
 
 setDateFormates();
+
+const specialCharacters = [
+    // Common punctuation and symbols
+    { char: '"', description: 'Double Quote' },
+    { char: '¢', description: 'Cent Symbol' },
+    { char: '€', description: 'Euro Symbol' },
+    { char: '£', description: 'Pound Symbol' },
+    { char: '¥', description: 'Yen Symbol' },
+    { char: '©', description: 'Copyright Symbol' },
+    { char: '®', description: 'Registered Trademark' },
+    { char: '™', description: 'Trademark Symbol' },
+    { char: '%', description: 'Percent Symbol' },
+    { char: '¶', description: 'Pilcrow Sign' },
+    { char: '§', description: 'Section Sign' },
+    { char: '•', description: 'Bullet Point' },
+    { char: '°', description: 'Degree Symbol' },
+    { char: '±', description: 'Plus-Minus Sign' },
+    { char: '×', description: 'Multiplication Sign' },
+    { char: '÷', description: 'Division Sign' },
+    { char: '√', description: 'Square Root Symbol' },
+    { char: '∞', description: 'Infinity Symbol' },
+    { char: '≈', description: 'Approximately Equal Symbol' },
+    { char: '≠', description: 'Not Equal Symbol' },
+    { char: '≤', description: 'Less Than or Equal Symbol' },
+    { char: '≥', description: 'Greater Than or Equal Symbol' },
+
+    // Arrows
+    { char: '←', description: 'Left Arrow' },
+    { char: '↑', description: 'Up Arrow' },
+    { char: '→', description: 'Right Arrow' },
+    { char: '↓', description: 'Down Arrow' },
+
+    // Mathematical symbols
+    { char: 'Σ', description: 'Summation Symbol' },
+    { char: '∫', description: 'Integral Symbol' },
+    { char: '∂', description: 'Partial Differential Symbol' },
+
+    // Shapes and suits
+    { char: '♠', description: 'Spade Suit' },
+    { char: '♥', description: 'Heart Suit' },
+    { char: '♦', description: 'Diamond Suit' },
+    { char: '♣', description: 'Club Suit' },
+
+    // Quotation marks and brackets
+    { char: '“', description: 'Left Double Quote' },
+    { char: '”', description: 'Right Double Quote' },
+    { char: '«', description: 'Left Guillemet' },
+    { char: '»', description: 'Right Guillemet' },
+
+    // Miscellaneous symbols
+    { char: 'µ', description: 'Micro Symbol' },
+    { char: 'ß', description: 'Eszett (Sharp S)' },
+    { char: '¶', description: 'Pilcrow (Paragraph Symbol)' },
+    { char: '§', description: 'Section Symbol' },
+
+    // Fractions
+    { char: '¼', description: 'One-Quarter Fraction' },
+    { char: '½', description: 'One-Half Fraction' },
+    { char: '¾', description: 'Three-Quarters Fraction' },
+
+    // Greek letters
+    { char: 'α', description: 'Alpha' },
+    { char: 'β', description: 'Beta' },
+    { char: 'γ', description: 'Gamma' },
+    { char: 'δ', description: 'Delta' },
+    { char: 'θ', description: 'Theta' },
+    { char: 'λ', description: 'Lambda' },
+    { char: 'π', description: 'Pi' },
+    { char: 'σ', description: 'Sigma' },
+    { char: 'φ', description: 'Phi' },
+    { char: 'Ω', description: 'Omega' }
+];
+
+
+
+const charactersDiv = document.querySelector(".characters")
+
+const symbol = document.querySelector(".symbol")
+const desc = document.querySelector(".desc")
+function populateSpecialChar() {
+
+
+    for (let i = 0; i < specialCharacters.length; i++) {
+        const charDiv = document.createElement("div")
+        charDiv.classList.add("char")
+        charDiv.textContent = specialCharacters[i].char;
+        charDiv.setAttribute("description", specialCharacters[i].description)
+        console.log(specialCharacters.length);
+        charactersDiv.append(charDiv)
+
+        charDiv.addEventListener("mousemove", () => {
+            symbol.innerText = charDiv.textContent;
+            desc.innerText = charDiv.getAttribute("description");
+        })
+    }
+}
+
+populateSpecialChar();
