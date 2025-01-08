@@ -230,12 +230,11 @@ const specialCharacters = [
     { char: 'Ω', description: 'Omega' }
 ];
 
-
-
 const charactersDiv = document.querySelector(".characters")
-
 const symbol = document.querySelector(".symbol")
 const desc = document.querySelector(".desc")
+const specialCharModal = document.querySelector(".special-char-pop-modal")
+
 function populateSpecialChar() {
 
 
@@ -244,14 +243,39 @@ function populateSpecialChar() {
         charDiv.classList.add("char")
         charDiv.textContent = specialCharacters[i].char;
         charDiv.setAttribute("description", specialCharacters[i].description)
-        console.log(specialCharacters.length);
         charactersDiv.append(charDiv)
 
         charDiv.addEventListener("mousemove", () => {
             symbol.innerText = charDiv.textContent;
             desc.innerText = charDiv.getAttribute("description");
         })
+
+        charDiv.addEventListener("click", () => {
+            editor.innerHTML += charDiv.textContent;
+            specialCharModal.classList.remove("open-popup")
+        })
     }
 }
 
 populateSpecialChar();
+const spclChar = document.querySelector("#spcl-char")
+spclChar.addEventListener("click", () => {
+    specialCharModal.classList.add("open-popup")
+})
+
+const closePopBtn = document.querySelector(".close-btn")
+
+closePopBtn.addEventListener("click", () => {
+    specialCharModal.classList.remove("open-popup")
+})
+
+const fullScreenBtn = document.querySelector("#full-scr")
+fullScreenBtn.addEventListener("click", openFullScreen)
+
+function openFullScreen() {
+    const elem = document.querySelector("html");
+    if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+    }
+}
+

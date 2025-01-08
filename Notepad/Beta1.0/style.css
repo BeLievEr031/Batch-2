@@ -26,6 +26,7 @@ nav {
   gap: 10px;
   padding: 5px 10px;
   border-bottom: 1px solid gray;
+  background-color: white;
 }
 
 .nav-item {
@@ -100,6 +101,7 @@ nav {
   height: 80vh;
   outline: none;
   overflow-y: scroll;
+  background-color: white;
 }
 
 .special-char-pop-modal {
@@ -110,6 +112,14 @@ nav {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.658);
   display: none;
+}
+
+.open-popup {
+  display: block;
+}
+
+.close-btn {
+  cursor: pointer;
 }
 
 .modal {
