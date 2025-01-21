@@ -2,6 +2,8 @@ debugger
 console.log(x); //undefined
 var x = 31;
 console.log(x); //31
+// console.log(y);
+
 
 {
     console.log(x); //31 
