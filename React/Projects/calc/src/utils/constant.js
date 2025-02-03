@@ -4,3 +4,5 @@ const color = {
     "btc2": "#333031",
     'calc': "#4cc2ff"
 }
+
+export default color;

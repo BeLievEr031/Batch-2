@@ -41,8 +41,8 @@ function Home() {
         </div>
 
         <div className="btn-cont">
-          {calculatorSymbols.map((item) => {
-            return <Button symbol={item} />;
+          {calculatorSymbols.map((item, index) => {
+            return <Button key={index} symbol={item} value={index} />;
           })}
         </div>
       </div>
