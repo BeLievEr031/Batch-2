@@ -42,7 +42,34 @@ function Home() {
 
         <div className="btn-cont">
           {calculatorSymbols.map((item, index) => {
-            return <Button key={index} symbol={item} value={index} />;
+            if (index < 8 || (index !== 23 && (index + 1) % 4 === 0)) {
+              return (
+                <Button
+                  key={index}
+                  symbol={item}
+                  value={index}
+                  bgColor="#333031"
+                />
+              );
+            } else if (index === 23) {
+              return (
+                <Button
+                  key={index}
+                  symbol={item}
+                  value={index}
+                  bgColor="#4cc2ff"
+                />
+              );
+            } else {
+              return (
+                <Button
+                  key={index}
+                  symbol={item}
+                  value={index}
+                  bgColor="#3c3a3b"
+                />
+              );
+            }
           })}
         </div>
       </div>

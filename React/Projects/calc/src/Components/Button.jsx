@@ -1,9 +1,13 @@
 import PropTypes from "prop-types";
 function Button(props) {
   return (
-    <button>
+    <button
+      style={{
+        backgroundColor: props.bgColor,
+      }}
+    >
       {props.symbol}
-      {props.value}
+      {/* {props.value} */}
     </button>
   );
 }
@@ -11,6 +15,7 @@ function Button(props) {
 Button.propTypes = {
   symbol: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
+  bgColor: PropTypes.string.isRequired,
 };
 
 export default Button;

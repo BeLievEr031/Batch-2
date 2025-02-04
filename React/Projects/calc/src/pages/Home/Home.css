@@ -70,4 +70,8 @@ button {
   outline: none;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
 }
