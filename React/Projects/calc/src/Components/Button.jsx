@@ -16,6 +16,7 @@ Button.propTypes = {
   symbol: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   bgColorClass: PropTypes.string.isRequired,
+  handleClick: PropTypes.func.isRequired,
 };
 
 export default Button;
