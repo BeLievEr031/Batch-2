@@ -1,7 +1,9 @@
+import { useState } from "react";
 import Button from "../../Components/Button";
 import "./Home.css";
 import { GiHamburgerMenu } from "react-icons/gi";
 function Home() {
+  const [inputData, setInputData] = useState("");
   const calculatorSymbols = [
     "%",
     "CE",
@@ -29,6 +31,11 @@ function Home() {
     "=",
   ];
 
+  const handleClick = (value) => {
+    console.log(inputData);
+    setInputData(inputData + value + "");
+  };
+
   return (
     <section>
       <div className="calc-cont">
@@ -37,7 +44,7 @@ function Home() {
           <p>Standard</p>
         </nav>
         <div className="input-cont">
-          <input type="number" />
+          <input type="text" value={inputData} />
         </div>
 
         <div className="btn-cont">
@@ -48,7 +55,8 @@ function Home() {
                   key={index}
                   symbol={item}
                   value={index}
-                  bgColor="#333031"
+                  bgColorClass="primary"
+                  handleClick={handleClick}
                 />
               );
             } else if (index === 23) {
@@ -57,7 +65,8 @@ function Home() {
                   key={index}
                   symbol={item}
                   value={index}
-                  bgColor="#4cc2ff"
+                  bgColorClass="tert"
+                  handleClick={handleClick}
                 />
               );
             } else {
@@ -66,7 +75,8 @@ function Home() {
                   key={index}
                   symbol={item}
                   value={index}
-                  bgColor="#3c3a3b"
+                  bgColorClass="secondary"
+                  handleClick={handleClick}
                 />
               );
             }

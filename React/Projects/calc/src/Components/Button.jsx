@@ -2,12 +2,12 @@ import PropTypes from "prop-types";
 function Button(props) {
   return (
     <button
-      style={{
-        backgroundColor: props.bgColor,
+      className={props.bgColorClass}
+      onClick={function () {
+        props.handleClick(props.symbol);
       }}
     >
       {props.symbol}
-      {/* {props.value} */}
     </button>
   );
 }
@@ -15,7 +15,7 @@ function Button(props) {
 Button.propTypes = {
   symbol: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
-  bgColor: PropTypes.string.isRequired,
+  bgColorClass: PropTypes.string.isRequired,
 };
 
 export default Button;
