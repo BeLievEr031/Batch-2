@@ -11,9 +11,6 @@ let rarr = arr.map(function (item, index, array) {
 // console.log(rarr);
 
 let frarr = arr.filter(function (data, index, arr) {
-    // console.log(index);
-    // console.log(arr);
-
     if (data > 100) {
         return data;
     }
